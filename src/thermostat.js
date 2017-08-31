@@ -14,6 +14,20 @@ var Thermostat = function (){
       throw "Maximum temp is 32C when powersafe is off"
     }
     else{this.temp=this.temp+num};
-
 };
+  this.reset = function(){
+    this.temp = 20;
+  };
+  this.currentUsage = function(){
+    switch(true){
+      case this.temp<18:
+        return "low-usage"
+        break;
+      case this.temp<25:
+        return "medium-usage"
+        break;
+      default:
+        return "high-usage"
+    };
+  };
 };

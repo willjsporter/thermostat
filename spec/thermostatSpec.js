@@ -35,8 +35,30 @@ describe("Thermostat", function() {
 
   it("should throw an error when temp goes above 32C when powersafe is off", function(){
     expect(function() {
-      thermo.powersafe = false
+      thermo.powersafe = false;
       thermo.change(21);
     }).toThrow("Maximum temp is 32C when powersafe is off");
+  });
+
+  it("temp can be reset", function(){
+      thermo.change(-9);
+      thermo.reset();
+      expect(thermo.temp).toEqual(20);
+  });
+
+  it("returns 'low-usage' if low temp", function(){
+      thermo.change(-9);
+      expect(thermo.currentUsage).toMatch('low-usage');
+  });
+
+  it("returns 'medium-usage' if medium temp", function(){
+      thermo.change(-2);
+      expect(thermo.currentUsage).toMatch('medium-usage');
+  });
+
+  it("returns 'high-usage' if high temp", function(){
+      thermo.powersafe = false
+      thermo.change(9);
+      expect(thermo.currentUsage).toMatch('high-usage');
   });
 });
