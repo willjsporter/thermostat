@@ -20,4 +20,11 @@ describe("Thermostat", function() {
     thermo.change(-5);
     expect(thermo.temp).toEqual(15);
   });
+
+  it("should throw an error when temp goes below 10C", function(){
+    expect(function() {
+      thermo.change(-11);
+    }).toThrow("Minimum temp is 10C");
+
+  });
 });
