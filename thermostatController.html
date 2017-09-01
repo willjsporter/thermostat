@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <style>
+    a.test {
+      font-weight: bold;
+    }
+  </style>
+    <!-- Metadata goes here -->
+    <!-- A web page’s head contains all of its metadata, like the page title, any CSS stylesheets, and other things that are required to render the page but you don’t necessarily want the user to see -->
+    <title>Thermostat</title>
+    <link rel='stylesheet' href='styles.css' />
+
+  </head>
+
+  <body id='body'>
+    <script src='https://code.jquery.com/jquery-3.2.1.min.js'></script>
+    <script src='src/thermostatController.js'></script>
+
+    <h1 id='temp'></h1>
+    <h1 id='powersafe'></h1>
+    <!-- <h1 id='checkUse'></h1> -->
+
+
+    <form id="controls">
+      <input type=button value="+5" id="+5" />
+      <input type=button value="+1" id="+1" />
+      <input type=button value="-1" id="-1" />
+      <input type=button value="-5" id="-5" /><br />
+      <input type=button value="Powersafe" id="powersafe" />
+      <input type=button value="Check Usage" id="checkUse" />
+      <input type=button value="Reset" id="reset" />
+    </form>
+    <!-- <h1>Current temperature: 20C</h1>
+    <h1>Powersafe mode: on</h1> -->
+
+    <script src='src/thermostat.js'></script>
+
+  </body>
+</html>

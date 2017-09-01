@@ -7,6 +7,8 @@ body {
 
 h1 {
   font-size: 2em;
+  white-space:nowrap;
+  overflow: hidden;
 }
 
 h2 {
@@ -37,6 +39,18 @@ a {
 p {
   text-align: justify; /* left/ right/ center*/
 }
+
+.low-usage {
+  color: green;
+  }
+
+.medium-usage {
+  color: orange;
+  }
+
+.high-usage {
+  color: red;
+  }
 
 input[type=submit]{
     background-color: #4CAF50 ;
